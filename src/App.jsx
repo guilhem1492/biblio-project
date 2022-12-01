@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute";
 import LoggedOut from "./components/LoggedOut/LoggedOut";
 import Search from "./pages/Search";
+import BookDetails from "./pages/BookDetails";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/books/:bookId" element={<BookDetails />} />
         <Route element={<LoggedOut />}>
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
