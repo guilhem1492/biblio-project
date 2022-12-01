@@ -18,7 +18,7 @@ const NavMain = () => {
   return (
     <nav className="NavMain">
       <NavLink className="logo" to="/">
-        <h1>Alexandrie 🏡</h1>
+        <h1> 🏡 </h1>
       </NavLink>
       {isLoggedIn && (
         <>

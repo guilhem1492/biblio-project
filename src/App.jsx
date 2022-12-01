@@ -26,6 +26,9 @@ function App() {
           <Route path="/profile" element={<Profile />} />
         </Route>
       </Routes>
+      <footer>
+        <p>Données fournies par Gutenberg.org</p>
+      </footer>
     </div>
   );
 }
