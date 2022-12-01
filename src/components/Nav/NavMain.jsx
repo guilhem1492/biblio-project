@@ -5,17 +5,20 @@ import "../../styles/NavMain.css";
 
 const NavMain = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [checked, setChecked] = useState(false);
   const { isLoggedIn, currentUser, removeUser } = useAuth();
   const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    navigate(`/search?books=${searchQuery}`);
+    const searchBy = checked ? `author` : `title`;
+    navigate(`/search?${searchBy}=${searchQuery}`);
   }
+
   return (
     <nav className="NavMain">
       <NavLink className="logo" to="/">
-        <h1>Alexandria 🏡</h1>
+        <h1>Alexandrie 🏡</h1>
       </NavLink>
       {isLoggedIn && (
         <>
@@ -31,20 +34,33 @@ const NavMain = () => {
       )}
 
       <form className="nav-search" onSubmit={handleSubmit}>
-        <label htmlFor="search">
-          <img src="/images/icon-search.png" alt="magnifying glass" />
+        <label htmlFor="searchTitle">
+          <img
+            className="magnifying-glass"
+            src="/images/icon-search.png"
+            alt="magnifying glass"
+          />
         </label>
+        <input
+          type="checkbox"
+          name="author"
+          checked={checked}
+          onChange={(e) => {
+            setChecked(Boolean(e.target.checked));
+          }}
+        />
         <input
           className="input-height"
           type="search"
-          name="searchBooks"
+          name="searchTitle"
           placeholder="Chercher un livre"
           value={searchQuery}
           onChange={(event) => {
             setSearchQuery(event.target.value);
           }}
-          id="search"
+          id="searchTitle"
         />
+
         <button className="search-btn">Chercher</button>
       </form>
     </nav>

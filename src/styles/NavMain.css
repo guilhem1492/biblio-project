@@ -1,4 +1,7 @@
 .NavMain {
-	display: flex;
-	gap: 0.5em;
+  display: flex;
+  gap: 0.5em;
+}
+.magnifying-glass {
+  height: 20px;
 }
