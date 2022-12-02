@@ -17,30 +17,26 @@ const NavMain = () => {
 
   return (
     <nav className="NavMain">
-      <NavLink className="logo" to="/">
-        <h1> 🏡 </h1>
+      <NavLink className="books-icon" to="/">
+        <img src="/images/home.png" alt="icone livres" />
       </NavLink>
       {isLoggedIn && (
         <>
-          <NavLink to="/profile">{currentUser && currentUser.email}</NavLink>
-          <button onClick={removeUser}>Log-Out</button>
+          <NavLink to="/profile">
+            {currentUser && currentUser.name} favoris
+          </NavLink>
+          <button onClick={removeUser}>Déconnexion</button>
         </>
       )}
       {!isLoggedIn && (
         <>
-          <NavLink to="/signin">Log in</NavLink>
-          <NavLink to="/signup">Sign Up</NavLink>
+          <NavLink to="/signup">S'enregistrer</NavLink>
+          <NavLink to="/signin">Connexion</NavLink>
         </>
       )}
 
       <form className="nav-search" onSubmit={handleSubmit}>
-        <label htmlFor="searchTitle">
-          <img
-            className="magnifying-glass"
-            src="/images/icon-search.png"
-            alt="magnifying glass"
-          />
-        </label>
+        <label htmlFor="searchTitle"></label>
         <input
           type="checkbox"
           name="author"
@@ -61,7 +57,13 @@ const NavMain = () => {
           id="searchTitle"
         />
 
-        <button className="search-btn">Chercher</button>
+        <button className="search-btn">
+          <img
+            className="magnifying-glass"
+            src="/images/icon-search.png"
+            alt="magnifying glass"
+          />
+        </button>
       </form>
     </nav>
   );

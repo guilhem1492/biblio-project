@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import service from "../api/apiHandler";
+import Footer from "../components/Footer/Footer";
 
 const SearchTitle = () => {
   const [allBooks, setAllBooks] = useState([]);
@@ -36,6 +37,7 @@ const SearchTitle = () => {
           </Link>
         ))}
       </ul>
+      <Footer />
     </div>
   );
 };

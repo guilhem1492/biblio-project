@@ -1,13 +1,15 @@
 import React from "react";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
     <div>
-      <h1>Bienvenue sur LIBRES EBOOKS</h1>
+      <h1>Bienvenue sur la LIBRIOTHÈQUE</h1>
       <h2>
-        Bibliothèque proposant plus de 3000 livres numériques gratuits en langue
-        française.
+        Bibliothèque en accès libre proposant plus de 3000 livres numériques
+        gratuits en langue française.
       </h2>
+      <Footer />
     </div>
   );
 };
