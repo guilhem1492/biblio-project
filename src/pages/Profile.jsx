@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 
 const Profile = () => {
-	return (
-		<div>
-			<p>Welcome to your protected profile!</p>
-		</div>
-	)
-}
+  return (
+    <div>
+      <p>Bienvenue sur votre page de livres favoris !</p>
+    </div>
+  );
+};
 
-export default Profile
+export default Profile;

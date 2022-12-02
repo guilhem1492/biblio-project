@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link, Routes, Route, useNavigate } from "react-router-dom";
 import service from "../api/apiHandler";
 import BackButton from "../components/BackButton/BackButton";
+import Footer from "../components/Footer/Footer";
 
 const BookDetails = () => {
   const [foundBook, setFoundBook] = useState(null);
@@ -20,7 +21,7 @@ const BookDetails = () => {
 
   return (
     <div>
-      {!foundBook && <h3>eBook non trouvé !</h3>}
+      {!foundBook && <h3>Ebook non trouvé !</h3>}
       {foundBook && (
         <>
           <h2>{foundBook.title}</h2>
@@ -35,10 +36,13 @@ const BookDetails = () => {
               return <p>{subject}</p>;
             })}
           </p>
-          <h3>eBook :</h3>
+          <h3>Ebook :</h3>
+
           <ul>
             <li>
-              <a href={foundBook.formats["text/html"]}>Format HTML</a>
+              <a href={foundBook.formats["text/html"]} target="_blank">
+                Format HTML
+              </a>
             </li>
             <li>
               <a
@@ -55,11 +59,12 @@ const BookDetails = () => {
                 target="_blank"
                 download
               >
-                Format MOBI à télécharger
+                Format Mobi à télécharger
               </a>
             </li>
           </ul>
           <BackButton />
+          <Footer />
         </>
       )}
     </div>
