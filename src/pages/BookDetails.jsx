@@ -31,9 +31,9 @@ const BookDetails = () => {
           </p>
           <img src={foundBook.formats["image/jpeg"]} alt={foundBook.title} />
           <h3>Sujets :</h3>
-          <p key={foundBook.id}>
+          <p>
             {foundBook.subjects.map((subject) => {
-              return <p>{subject}</p>;
+              return <p key={foundBook.id}>{subject}</p>;
             })}
           </p>
           <h3>Ebook :</h3>

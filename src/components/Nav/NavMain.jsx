@@ -22,16 +22,32 @@ const NavMain = () => {
       </NavLink>
       {isLoggedIn && (
         <>
-          <NavLink to="/profile">
-            {currentUser && currentUser.name} favoris
-          </NavLink>
-          <button onClick={removeUser}>Déconnexion</button>
+          <NavLink to="/profile">{currentUser && currentUser.name}</NavLink>
+          <button onClick={removeUser}>
+            <img
+              className="logout-icon"
+              src="/images/logout.png"
+              alt="icone déconnexion"
+            />
+          </button>
         </>
       )}
       {!isLoggedIn && (
         <>
-          <NavLink to="/signup">S'enregistrer</NavLink>
-          <NavLink to="/signin">Connexion</NavLink>
+          <NavLink to="/signup">
+            <img
+              className="signup-icon"
+              src="/images/signup.png"
+              alt="icone s'enregistrer"
+            />
+          </NavLink>
+          <NavLink to="/signin">
+            <img
+              className="login-icon"
+              src="/images/login.png"
+              alt="icone connexion"
+            />
+          </NavLink>
         </>
       )}
 
