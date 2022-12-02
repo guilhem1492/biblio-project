@@ -1,0 +1,10 @@
+.signin,
+.signup {
+  padding: 5rem 10vw 0;
+  text-align: center;
+}
+.form-signin,
+.form-signup {
+  display: flex;
+  flex-direction: column;
+}

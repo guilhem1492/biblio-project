@@ -3,6 +3,7 @@ import useForm from "../../hooks/useForm";
 import apiHandler from "../../api/apiHandler";
 import useAuth from "../../auth/useAuth";
 import { useNavigate } from "react-router-dom";
+import "./FormSign.css";
 
 const FormSignIn = () => {
   const [{ email, password }, handleChange] = useForm({
@@ -29,10 +30,10 @@ const FormSignIn = () => {
   };
 
   return (
-    <>
+    <div className="signin">
       {error && <h3 className="error">{error.message}</h3>}
-      <form onSubmit={handleSubmit}>
-        <h2>Connexion</h2>
+      <h2>Connexion</h2>
+      <form className="form-signin" onSubmit={handleSubmit}>
         <label htmlFor="email">Email :</label>
         <input
           type="email"
@@ -41,6 +42,7 @@ const FormSignIn = () => {
           onChange={handleChange}
           value={email}
         />
+
         <label htmlFor="password">Mot de passe :</label>
         <input
           type="password"
@@ -51,7 +53,7 @@ const FormSignIn = () => {
         />
         <button>Valider</button>
       </form>
-    </>
+    </div>
   );
 };
 

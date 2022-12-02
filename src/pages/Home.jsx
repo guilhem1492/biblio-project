@@ -5,11 +5,11 @@ import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 
 const Home = () => {
-  const [someBooks, setSomeBooks] = useState([])
+  const [someBooks, setSomeBooks] = useState([]);
 
   useEffect(() => {
-    service.get('/api').then((response) => {
-      setSomeBooks(response.data)
+    service.get("/api").then((response) => {
+      setSomeBooks(response.data);
     });
   }, []);
 
@@ -22,8 +22,8 @@ const Home = () => {
       </h2>
       <ul className="found-books">
         {someBooks.map((book, index) => (
-          <Link to={`/books/${book._id}`}>
-            <li key={book._id}>
+          <Link key={book.id} to={`/books/${book._id}`}>
+            <li>
               <h3>{book.title}</h3>
 
               <h4>

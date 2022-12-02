@@ -23,8 +23,8 @@ const SearchTitle = () => {
     <div>
       <ul className="found-books">
         {allBooks.map((book, index) => (
-          <Link to={`/books/${book._id}`}>
-            <li key={book._id}>
+          <Link key={book.id} to={`/books/${book._id}`}>
+            <li>
               <h3>{book.title}</h3>
 
               <h4>

@@ -20,10 +20,10 @@ const FormSignUp = () => {
       });
   };
   return (
-    <>
+    <div className="signup">
       {error && <h3 className="error">{error.message}</h3>}
-      <form onSubmit={handleSubmit}>
-        <h2>S'enregistrer</h2>
+      <h2>S'enregistrer</h2>
+      <form className="form-signup" onSubmit={handleSubmit}>
         <label htmlFor="name">Nom :</label>
         <input
           onChange={handleChange}
@@ -50,7 +50,7 @@ const FormSignUp = () => {
         />
         <button>Valider</button>
       </form>
-    </>
+    </div>
   );
 };
 
