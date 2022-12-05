@@ -4,11 +4,13 @@ import { useParams, Link, Routes, Route, useNavigate } from "react-router-dom";
 import service from "../api/apiHandler";
 import BackButton from "../components/BackButton/BackButton";
 import Footer from "../components/Footer/Footer";
+import ButtonAddFav from "../components/Forms/ButtonAddFav";
 
 const BookDetails = () => {
   const [foundBook, setFoundBook] = useState(null);
   const { bookId } = useParams();
   console.log("bookId", bookId);
+  console.log("foundBook", foundBook);
 
   useEffect(() => {
     service.get(`/api/books/${bookId}`).then(({ data }) => {
@@ -26,10 +28,15 @@ const BookDetails = () => {
         <>
           <h2>{foundBook.title}</h2>
           <p>
-            {foundBook.author.name} ({foundBook.author.birth_year}-
-            {foundBook.author.death_year})
+            {foundBook.author?.name}({foundBook.author?.birth_year}-
+            {foundBook.author?.death_year})
           </p>
           <img src={foundBook.formats["image/jpeg"]} alt={foundBook.title} />
+          <ButtonAddFav
+            id={bookId}
+            isFaved={foundBook.isFaved}
+            setFoundBook={setFoundBook}
+          />
           <h3>Sujets :</h3>
           <p>
             {foundBook.subjects.map((subject) => {

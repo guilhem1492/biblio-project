@@ -47,7 +47,8 @@ form {
 
 .logout-icon,
 .login-icon,
-.signup-icon {
+.signup-icon,
+.fav-icon {
   width: 30px;
 }
 

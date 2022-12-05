@@ -3,15 +3,21 @@ import Footer from "../components/Footer/Footer";
 import service from "../api/apiHandler";
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import "../styles/Home.css";
 
 const Home = () => {
-  const [someBooks, setSomeBooks] = useState([]);
+  const [someBooks, setSomeBooks] = useState(null);
+  console.log(someBooks);
 
   useEffect(() => {
     service.get("/api").then((response) => {
       setSomeBooks(response.data);
     });
   }, []);
+
+  if (!someBooks) {
+    return <p>Chargement...</p>;
+  }
 
   return (
     <div>
@@ -31,7 +37,6 @@ const Home = () => {
               </h4>
               {/* {console.log(book.authors[0].name, "index:", index)} */}
               <img src={book.formats["image/jpeg"]} alt={book.title} />
-              <hr />
             </li>
           </Link>
         ))}
