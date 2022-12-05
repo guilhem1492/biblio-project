@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../../auth/useAuth";
-import "../../styles/NavMain.css";
+import "./NavMain.css";
 
 const NavMain = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,6 +23,9 @@ const NavMain = () => {
       {isLoggedIn && (
         <>
           <NavLink to="/profile">{currentUser && currentUser.name}</NavLink>
+          <NavLink className="fav-icon" to="/favorites">
+            <img src="/images/fav.png" alt="icone favoris" />
+          </NavLink>
           <button onClick={removeUser}>
             <img
               className="logout-icon"

@@ -1,0 +1,11 @@
+.found-books {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 250px;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.found-books li {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}

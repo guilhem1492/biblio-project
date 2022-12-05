@@ -8,6 +8,7 @@ import PrivateRoute from "./components/ProtectedRoute/PrivateRoute";
 import LoggedOut from "./components/LoggedOut/LoggedOut";
 import Search from "./pages/Search";
 import BookDetails from "./pages/BookDetails";
+import Favorites from "./pages/Favorites";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route element={<PrivateRoute />}>
           {/* All routes after the PrivateRoute require the user to be loggedIn */}
           <Route path="/profile" element={<Profile />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Route>
       </Routes>
     </div>
