@@ -7,7 +7,7 @@ const FormAddFav = ({ id, isFaved, setFoundBook }) => {
     e.preventDefault();
     console.log(id);
 
-    service[isFaved ? "delete" : "post"](`/api/auth/me/favorites/${id}`).then(
+    service[isFaved ? "delete" : "post"](`/api/me/favorites/${id}`).then(
       (response) => {
         console.log(response.status);
         setFoundBook((currentValue) => {

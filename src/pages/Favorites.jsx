@@ -8,7 +8,7 @@ const Favorites = () => {
   const [allFavBooks, setAllFavBooks] = useState(null);
 
   useEffect(() => {
-    service.get("/api/auth/me/favorites").then((response) => {
+    service.get("/api/me/favorites").then((response) => {
       console.log("response", response.data);
       setAllFavBooks(response.data);
     });
