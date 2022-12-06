@@ -9,6 +9,7 @@ import LoggedOut from "./components/LoggedOut/LoggedOut";
 import Search from "./pages/Search";
 import BookDetails from "./pages/BookDetails";
 import Favorites from "./pages/Favorites";
+import EditProfile from "./pages/EditProfile";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           {/* All routes after the PrivateRoute require the user to be loggedIn */}
           <Route path="/profile" element={<Profile />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="/profile/:id/edit" element={<EditProfile />}></Route>
         </Route>
       </Routes>
     </div>
