@@ -33,6 +33,7 @@ const FormSignIn = () => {
     <div className="signin">
       {error && <h3 className="error">{error.message}</h3>}
       <h2>Connexion</h2>
+      <p>Connectez-vous pour ajouter des ebooks parmi vos favoris !</p>
       <form className="form-signin" onSubmit={handleSubmit}>
         <label htmlFor="email">Email :</label>
         <input
@@ -52,6 +53,7 @@ const FormSignIn = () => {
           value={password}
         />
         <button>Valider</button>
+        {error && <p>{error}</p>}
       </form>
     </div>
   );

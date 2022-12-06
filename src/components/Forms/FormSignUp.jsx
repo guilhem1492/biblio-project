@@ -23,6 +23,10 @@ const FormSignUp = () => {
     <div className="signup">
       {error && <h3 className="error">{error.message}</h3>}
       <h2>S'enregistrer</h2>
+      <p>
+        Enregistrez-vous puis connectez-vous pour ajouter des ebooks parmi vos
+        favoris !
+      </p>
       <form className="form-signup" onSubmit={handleSubmit}>
         <label htmlFor="name">Nom :</label>
         <input

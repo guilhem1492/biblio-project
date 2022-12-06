@@ -1,0 +1,15 @@
+.favorites {
+  padding: 5rem 10vw 0;
+  text-align: center;
+}
+
+.fav-books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5vw;
+  margin-bottom: 2rem;
+}
+
+.fav-books img:hover {
+  scale: 1.2;
+}

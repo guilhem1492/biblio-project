@@ -1,9 +1,10 @@
 import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer>
-      <p>Données fournies par Gutenberg.org</p>
+      <p className="credit-gutenberg">Données fournies par Gutenberg.org</p>
     </footer>
   );
 };

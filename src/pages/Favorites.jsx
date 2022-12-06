@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import service from "../api/apiHandler";
 import BackButton from "../components/BackButton/BackButton";
-import Profile from "./Profile";
+import Footer from "../components/Footer/Footer";
+import "../styles/Favorites.css";
 
 const Favorites = () => {
   const [allFavBooks, setAllFavBooks] = useState(null);
@@ -19,26 +20,22 @@ const Favorites = () => {
   }
 
   return (
-    <div>
-      <Profile />
+    <div className="favorites">
+      <h2>Mes livres favoris</h2>
       <ul className="fav-books">
         {allFavBooks.map((book, index) => (
           <Link key={book.ebook._id} to={`/books/${book.ebook._id}`}>
             <li>
-              <h3>{book.ebook.title}</h3>
-
-              <h4>{book.ebook.author?.name}</h4>
-
               <img
                 src={book.ebook.formats["image/jpeg"]}
                 alt={book.ebook.title}
               />
-              <hr />
             </li>
           </Link>
         ))}
       </ul>
       <BackButton />
+      <Footer />
     </div>
   );
 };

@@ -21,11 +21,13 @@ h1 {
   gap: 5vw;
   margin-bottom: 2rem;
 }
-.found-cover {
-  height: 280px;
-  max-width: 200px;
+
+.found-books img:hover {
+  scale: 1.2;
 }
+
 .found-books li {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  width: 200px;
 }
