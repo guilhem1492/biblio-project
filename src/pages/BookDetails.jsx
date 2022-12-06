@@ -4,7 +4,7 @@ import { useParams, Link, Routes, Route, useNavigate } from "react-router-dom";
 import service from "../api/apiHandler";
 import BackButton from "../components/BackButton/BackButton";
 import Footer from "../components/Footer/Footer";
-import ButtonAddFav from "../components/Forms/ButtonAddFav";
+import ButtonAddFav from "../components/ButtonAddFav/ButtonAddFav";
 
 const BookDetails = () => {
   const [foundBook, setFoundBook] = useState(null);
