@@ -7,7 +7,7 @@
 
 .NavMain {
   color: #000000;
-  font-family: "Library3am";
+  font-family: "Library3am", Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
   background-color: snow;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
