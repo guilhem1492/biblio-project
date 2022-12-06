@@ -14,7 +14,10 @@ const FormAddFav = ({ id, isFaved, setFoundBook }) => {
           return { ...currentValue, isFaved: response.status === 201 };
         });
       }
-    );
+    ).catch(error => {
+      console.error(error)
+      alert("Connectez vous pour enregistrer des favoris !")
+    })
   };
 
   return (
