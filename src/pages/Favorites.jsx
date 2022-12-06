@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import service from "../api/apiHandler";
 import BackButton from "../components/BackButton/BackButton";
+import Profile from "./Profile";
 
 const Favorites = () => {
   const [allFavBooks, setAllFavBooks] = useState(null);
@@ -19,6 +20,7 @@ const Favorites = () => {
 
   return (
     <div>
+      <Profile />
       <ul className="fav-books">
         {allFavBooks.map((book, index) => (
           <Link key={book.ebook._id} to={`/books/${book.ebook._id}`}>
