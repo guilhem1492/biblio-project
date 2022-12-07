@@ -8,3 +8,32 @@
 .cover-book-details {
   width: 250px;
 }
+.fav {
+  width: 50px;
+}
+.formats-list {
+  display: flex;
+  gap: 2vw;
+}
+.button-format {
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.button-format:hover {
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+}
+.book-subjects {
+  list-style-position: inside;
+  list-style-type: square;
+}
+.ebook-formats {
+  margin-bottom: 1rem;
+}

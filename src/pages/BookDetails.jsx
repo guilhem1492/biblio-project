@@ -48,35 +48,44 @@ const BookDetails = () => {
               </p>
 
               <h4>Sujets du livre (en anglais) :</h4>
-              <p>
-                {foundBook.subjects.map((subject) => {
-                  return <p key={foundBook.id}>{subject}</p>;
-                })}
-              </p>
-              <h4>Ebook :</h4>
-
               <ul>
+                {foundBook.subjects.map((subject) => {
+                  return (
+                    <li className="book-subjects" key={foundBook.id}>
+                      {subject}
+                    </li>
+                  );
+                })}
+              </ul>
+              <h4 className="ebook-formats">Ebook (formats) :</h4>
+              <ul className="formats-list">
                 <li>
-                  <a href={foundBook.formats["text/html"]} target="_blank">
-                    Format HTML
+                  <a
+                    className="button-format"
+                    href={foundBook.formats["text/html"]}
+                    target="_blank"
+                  >
+                    HTML
                   </a>
                 </li>
                 <li>
                   <a
+                    className="button-format"
                     href={foundBook.formats["application/epub+zip"]}
                     target="_blank"
                     download
                   >
-                    Format ePub à télécharger
+                    EPUB
                   </a>
                 </li>
                 <li>
                   <a
+                    className="button-format"
                     href={foundBook.formats["application/x-mobipocket-ebook"]}
                     target="_blank"
                     download
                   >
-                    Format Mobi à télécharger
+                    MOBI
                   </a>
                 </li>
               </ul>

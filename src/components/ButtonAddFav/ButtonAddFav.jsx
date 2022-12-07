@@ -7,17 +7,17 @@ const FormAddFav = ({ id, isFaved, setFoundBook }) => {
     e.preventDefault();
     console.log(id);
 
-    service[isFaved ? "delete" : "post"](`/api/me/favorites/${id}`).then(
-      (response) => {
+    service[isFaved ? "delete" : "post"](`/api/me/favorites/${id}`)
+      .then((response) => {
         console.log(response.status);
         setFoundBook((currentValue) => {
           return { ...currentValue, isFaved: response.status === 201 };
         });
-      }
-    ).catch(error => {
-      console.error(error)
-      alert("Connectez vous pour enregistrer des favoris !")
-    })
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Connectez-vous pour enregistrer des favoris !");
+      });
   };
 
   return (

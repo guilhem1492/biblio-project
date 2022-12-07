@@ -23,8 +23,8 @@ const Home = () => {
     <div className="home">
       <h1>Bienvenue à la LIBRIOTHÈQUE</h1>
       <p className="intro">
-        Bibliothèque en accès libre proposant plus de 3400 ebooks gratuits en
-        langue française.
+        Bibliothèque numérique proposant plus de 3400 ebooks gratuits en langue
+        française.
       </p>
       <ul className="found-books">
         {someBooks.map((book, index) => (
