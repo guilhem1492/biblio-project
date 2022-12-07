@@ -26,7 +26,7 @@ const BookDetails = () => {
       {!foundBook && <h3>Ebook non trouvé !</h3>}
       {foundBook && (
         <>
-          <h2>{foundBook.title}</h2>
+          <h3>{foundBook.title}</h3>
           <p>
             {foundBook.author?.name}({foundBook.author?.birth_year}-
             {foundBook.author?.death_year})
@@ -37,7 +37,7 @@ const BookDetails = () => {
             isFaved={foundBook.isFaved}
             setFoundBook={setFoundBook}
           />
-          <h3>Sujets :</h3>
+          <h3>Sujets du livre (en anglais) :</h3>
           <p>
             {foundBook.subjects.map((subject) => {
               return <p key={foundBook.id}>{subject}</p>;

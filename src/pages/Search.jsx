@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import service from "../api/apiHandler";
 import Footer from "../components/Footer/Footer";
+import "../styles/Search.css";
 
 const SearchTitle = () => {
   const [allBooks, setAllBooks] = useState([]);
@@ -20,19 +21,12 @@ const SearchTitle = () => {
   }, [title, author]);
 
   return (
-    <div>
+    <div className="search">
       <ul className="found-books">
         {allBooks.map((book, index) => (
           <Link key={book.id} to={`/books/${book._id}`}>
             <li>
-              <h3>{book.title}</h3>
-
-              <h4>
-                {book.author ? book.author.name : "Nom de l'auteur non précisé"}
-              </h4>
-              {/* {console.log(book.authors[0].name, "index:", index)} */}
               <img src={book.formats["image/jpeg"]} alt={book.title} />
-              <hr />
             </li>
           </Link>
         ))}

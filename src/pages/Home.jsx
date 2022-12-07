@@ -30,17 +30,11 @@ const Home = () => {
         {someBooks.map((book, index) => (
           <Link key={book.id} to={`/books/${book._id}`}>
             <li>
-              {/* <h3>{book.title}</h3> */}
-
-              {/* {console.log(book.authors[0].name, "index:", index)} */}
               <img
                 className="found-cover"
                 src={book.formats["image/jpeg"]}
                 alt={book.title}
               />
-              {/* <h4>
-                {book.author ? book.author.name : "Nom de l'auteur non précisé"}
-              </h4> */}
             </li>
           </Link>
         ))}

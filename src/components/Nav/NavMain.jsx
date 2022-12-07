@@ -22,7 +22,9 @@ const NavMain = () => {
       </NavLink>
       {isLoggedIn && (
         <>
-          <NavLink to="/profile">{currentUser && currentUser.name}</NavLink>
+          <NavLink className="currentuser" to="/profile">
+            {currentUser && currentUser.name}
+          </NavLink>
           <NavLink className="fav-icon" to="/favorites">
             <img src="/images/fav.png" alt="icone favoris" />
           </NavLink>
@@ -68,7 +70,7 @@ const NavMain = () => {
           className="input-height"
           type="search"
           name="searchTitle"
-          placeholder="Chercher un livre"
+          placeholder="Chercher un livre par titre"
           value={searchQuery}
           onChange={(event) => {
             setSearchQuery(event.target.value);
