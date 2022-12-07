@@ -57,7 +57,7 @@ const NavMain = () => {
       )}
 
       <form className="nav-search" onSubmit={handleSubmit}>
-        <label className="switch" htmlFor="searchTitle">
+        <label className="switch" >
           <input
             type="checkbox"
             name="author"
