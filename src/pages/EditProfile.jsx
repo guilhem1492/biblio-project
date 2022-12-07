@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import service from "../api/apiHandler";
-import { useNavigate } from "react-router-dom";
 import useAuth from "../auth/useAuth";
+import BackButton from "../components/BackButton/BackButton";
+import "../styles/EditProfile.css";
 
 const EditProfile = () => {
   const { removeUser } = useAuth();
@@ -30,8 +31,9 @@ const EditProfile = () => {
   const { password, newPassword } = formData;
 
   return (
-    <form onSubmit={handleSubmit} style={{ marginTop: "10rem" }}>
-      <div>
+    <div className="edit-profile">
+      <BackButton />
+      <form className="change-password" onSubmit={handleSubmit}>
         <label htmlFor="password">Mot de passe :</label>
         <input
           type="password"
@@ -40,8 +42,7 @@ const EditProfile = () => {
           value={password}
           onChange={handleChange}
         />
-      </div>
-      <div>
+
         <label htmlFor="newPassword">Nouveau mot de passe :</label>
         <input
           type="password"
@@ -50,10 +51,11 @@ const EditProfile = () => {
           value={newPassword}
           onChange={handleChange}
         />
-      </div>
-      <button>Enregistrer</button>
-      {error && <p>{error}</p>}
-    </form>
+
+        <button className="button-save">Enregistrer</button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </form>
+    </div>
   );
 };
 

@@ -1,8 +1,10 @@
 import FormSignUp from "../components/Forms/FormSignUp";
+import BackButton from "../components/BackButton/BackButton";
 
 const Signup = () => {
   return (
-    <div>
+    <div className="sign-pages">
+      <BackButton />
       <FormSignUp />
     </div>
   );

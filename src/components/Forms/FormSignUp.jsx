@@ -16,12 +16,11 @@ const FormSignUp = () => {
         navigate("/signin");
       })
       .catch((error) => {
-        setError(error.response.data);
+        setError(error.response.data.message);
       });
   };
   return (
     <div className="signup">
-      {error && <h3 className="error">{error.message}</h3>}
       <h2>S'enregistrer</h2>
       <p>
         Enregistrez-vous puis connectez-vous pour ajouter des ebooks parmi vos
@@ -52,7 +51,8 @@ const FormSignUp = () => {
           id="password"
           name="password"
         />
-        <button>Valider</button>
+        <button className="button-validate">Valider</button>
+        {error && <p style={{ color: "red", fontWeight: "bold" }}>{error}</p>}
       </form>
     </div>
   );
