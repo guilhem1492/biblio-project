@@ -69,10 +69,10 @@ const NavMain = () => {
           <span className="slider"></span>
         </label>
         <input
-          className="input-height"
+          className="search-input"
           type="search"
           name="searchTitle"
-          placeholder="Chercher un livre par titre"
+          placeholder={`Chercher un livre par ${checked ? "auteur" : "titre"}`}
           value={searchQuery}
           onChange={(event) => {
             setSearchQuery(event.target.value);
