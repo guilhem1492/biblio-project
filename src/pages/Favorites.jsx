@@ -21,6 +21,7 @@ const Favorites = () => {
 
   return (
     <div className="favorites">
+      <BackButton />
       <h2>Mes livres favoris</h2>
       <ul className="fav-books">
         {allFavBooks.map((book, index) => (
@@ -34,7 +35,6 @@ const Favorites = () => {
           </Link>
         ))}
       </ul>
-      <BackButton />
       <Footer />
     </div>
   );

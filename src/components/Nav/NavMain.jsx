@@ -57,15 +57,17 @@ const NavMain = () => {
       )}
 
       <form className="nav-search" onSubmit={handleSubmit}>
-        <label htmlFor="searchTitle"></label>
-        <input
-          type="checkbox"
-          name="author"
-          checked={checked}
-          onChange={(e) => {
-            setChecked(Boolean(e.target.checked));
-          }}
-        />
+        <label className="switch" htmlFor="searchTitle">
+          <input
+            type="checkbox"
+            name="author"
+            checked={checked}
+            onChange={(e) => {
+              setChecked(Boolean(e.target.checked));
+            }}
+          />
+          <span className="slider"></span>
+        </label>
         <input
           className="input-height"
           type="search"

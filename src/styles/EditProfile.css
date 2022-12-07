@@ -1,24 +1,12 @@
-.signin,
-.signup {
-  text-align: center;
+.edit-profile {
+  padding: 5rem 10vw 0;
 }
-.form-signin,
-.form-signup {
-  margin-top: 1rem;
+
+.change-password {
   display: flex;
   flex-direction: column;
 }
-
-.fav {
-  width: 30px;
-}
-
-label {
-  font-family: Library3am, Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
-}
-
-.button-validate {
+.button-save {
   font-weight: bold;
   border: 1px solid black;
   padding: 0.4rem 1rem;
@@ -26,7 +14,7 @@ label {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   margin-top: 1.5rem;
 }
-.button-validate:hover {
+.button-save:hover {
   font-weight: bold;
   color: white;
   background-color: black;

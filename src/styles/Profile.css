@@ -1,4 +1,28 @@
 .profile-page {
   padding: 5rem 10vw 0;
+}
+.profile {
   text-align: center;
+}
+.email {
+  font-family: Library3am, Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+.button-change {
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.button-change:hover {
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+.profile-page p {
+  margin: 2rem;
 }
