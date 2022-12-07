@@ -66,7 +66,7 @@ button {
   display: inline-block;
   width: 60px;
   height: 34px;
-  background-color: #000000;
+  
 }
 
 .switch input {
@@ -78,11 +78,12 @@ button {
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
+  border-radius: 34px;
+  top: 2rem;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: red;
+  background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -90,21 +91,24 @@ button {
 .slider:before {
   position: absolute;
   content: "";
+  border-radius: 50%;
   height: 26px;
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: red;
+  background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
   background-color: #2196f3;
+  border: 1px solid black;
 }
 
 input:focus + .slider {
   box-shadow: 0 0 1px #2196f3;
+  border: 1px solid black;
 }
 
 input:checked + .slider:before {
