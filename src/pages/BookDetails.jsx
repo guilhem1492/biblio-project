@@ -9,24 +9,40 @@ import "../styles/BookDetails.css";
 
 const BookDetails = () => {
   const [foundBook, setFoundBook] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { bookId } = useParams();
+  const navigate = useNavigate();
   console.log("bookId", bookId);
   console.log("foundBook", foundBook);
 
   useEffect(() => {
-    service.get(`/api/books/${bookId}`).then(({ data }) => {
-      console.log(data);
-      setFoundBook(data);
-    });
+    service
+      .get(`/api/books/${bookId}`)
+      .then(({ data }) => {
+        setFoundBook(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error.response.data);
+      });
   }, [bookId]);
-
-  const navigate = useNavigate();
 
   return (
     <div className="book-details">
       <BackButton />
       <div className="book-img-and-details">
-        {!foundBook && <p style={{ color: "red", fontWeight: "bold", fontSize: "2rem", margin: "0 auto" }}>Ebook introuvable !</p>}
+        {!foundBook && (
+          <p
+            style={{
+              color: loading ? "black" : "red",
+              fontWeight: "bold",
+              fontSize: "2rem",
+              margin: "0 auto",
+            }}
+          >
+            {loading ? "Chargement..." : "Ebook introuvable !"}
+          </p>
+        )}
         {foundBook && (
           <>
             <img
