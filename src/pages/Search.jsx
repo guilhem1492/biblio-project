@@ -6,7 +6,7 @@ import Footer from "../components/Footer/Footer";
 import "../styles/Search.css";
 
 const SearchTitle = () => {
-  const [allBooks, setAllBooks] = useState([]);
+  const [allBooks, setAllBooks] = useState(null);
   const [query] = useSearchParams();
   const title = query.get("title");
   const author = query.get("author");
@@ -19,6 +19,16 @@ const SearchTitle = () => {
       setAllBooks(response.data);
     });
   }, [title, author]);
+
+  if (!allBooks) {
+    return (
+      <div className="search">
+        <p style={{ color: "black", fontWeight: "bold", fontSize: "2rem" }}>
+          Chargement...
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="search">
