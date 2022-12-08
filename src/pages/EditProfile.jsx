@@ -53,7 +53,7 @@ const EditProfile = () => {
         />
 
         <button className="button-save">Enregistrer</button>
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p style={{ color: "red", fontWeight: "bold" }}>{error}</p>}
       </form>
     </div>
   );

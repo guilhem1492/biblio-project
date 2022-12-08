@@ -22,15 +22,25 @@ const SearchTitle = () => {
 
   return (
     <div className="search">
-      <ul className="found-books">
-        {allBooks.map((book, index) => (
-          <Link key={book.id} to={`/books/${book._id}`}>
-            <li>
-              <img src={book.formats["image/jpeg"]} alt={book.title} />
-            </li>
-          </Link>
-        ))}
-      </ul>
+      {!allBooks.length && (
+        <p style={{ color: "red", fontWeight: "bold", fontSize: "2rem" }}>
+          Ebook introuvable !
+        </p>
+      )}
+      {allBooks && (
+        <>
+          <ul className="found-books">
+            {allBooks.map((book, index) => (
+              <Link key={book.id} to={`/books/${book._id}`}>
+                <li>
+                  <img src={book.formats["image/jpeg"]} alt={book.title} />
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </>
+      )}
+
       <Footer />
     </div>
   );

@@ -26,7 +26,7 @@ const BookDetails = () => {
     <div className="book-details">
       <BackButton />
       <div className="book-img-and-details">
-        {!foundBook && <h3>Ebook non trouvé !</h3>}
+        {!foundBook && <p>Ebook introuvable !</p>}
         {foundBook && (
           <>
             <img
