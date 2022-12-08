@@ -38,7 +38,7 @@ form {
 }
 
 .search-input::placeholder {
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .magnifying-glass {
@@ -46,7 +46,7 @@ form {
 }
 
 .books-icon {
-  width: 50px;
+  width: 45px;
 }
 
 .logout-icon,

@@ -17,16 +17,20 @@ const NavMain = () => {
 
   return (
     <nav className="NavMain">
-      <NavLink className="books-icon" to="/">
-        <img src="/images/home.png" alt="icone livres" />
+      <NavLink to="/">
+        <img className="books-icon" src="/images/home.png" alt="icone livres" />
       </NavLink>
       {isLoggedIn && (
         <>
           <NavLink className="currentuser" to="/profile">
             {currentUser && currentUser.name}
           </NavLink>
-          <NavLink className="fav-icon" to="/favorites">
-            <img src="/images/fav.png" alt="icone favoris" />
+          <NavLink to="/favorites">
+            <img
+              className="fav-icon"
+              src="/images/fav.png"
+              alt="icone favoris"
+            />
           </NavLink>
           <button onClick={removeUser}>
             <img
