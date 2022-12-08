@@ -26,7 +26,7 @@ const BookDetails = () => {
     <div className="book-details">
       <BackButton />
       <div className="book-img-and-details">
-        {!foundBook && <p>Ebook introuvable !</p>}
+        {!foundBook && <p style={{ color: "red", fontWeight: "bold", fontSize: "2rem", margin: "0 auto" }}>Ebook introuvable !</p>}
         {foundBook && (
           <>
             <img

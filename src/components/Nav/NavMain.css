@@ -95,7 +95,11 @@ button {
 
 .slider:before {
   position: absolute;
-  content: "";
+  content: "📖";
+  font-size: 16px;
+  text-align: center;
+  padding-top: 4px;
+  line-height: 1;
   border-radius: 50%;
   height: 26px;
   width: 26px;
@@ -113,6 +117,11 @@ input:checked + .slider {
 
 input:checked + .slider::before {
   background-color: #ffffff;
+  content: "🧑";
+  font-size: 17px;
+  line-height: 1;
+  text-align: center;
+  padding-top: 4px;
   /* border: 1px solid black; */
 }
 
