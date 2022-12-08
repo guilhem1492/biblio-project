@@ -57,7 +57,7 @@ const NavMain = () => {
       )}
 
       <form className="nav-search" onSubmit={handleSubmit}>
-        <label className="switch" >
+        <label className="switch">
           <input
             type="checkbox"
             name="author"
@@ -72,7 +72,9 @@ const NavMain = () => {
           className="search-input"
           type="search"
           name="searchTitle"
-          placeholder={`Chercher un livre par ${checked ? "auteur" : "titre"}`}
+          placeholder={`Chercher des livres par ${
+            checked ? "auteur" : "titre"
+          }`}
           value={searchQuery}
           onChange={(event) => {
             setSearchQuery(event.target.value);
